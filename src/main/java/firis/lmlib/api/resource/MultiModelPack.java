@@ -17,12 +17,12 @@ public class MultiModelPack {
 	/**
 	 * マルチモデル名
 	 */
-	protected String multiModelName = "";
+	public String multiModelName = "";
 	
 	/**
 	 * メイドさんモデル
 	 */
-	protected ModelMultiBase modelLittleMaid = null;
+	public ModelMultiBase modelLittleMaid = null;
 	
 	/**
 	 * インナー防具モデル

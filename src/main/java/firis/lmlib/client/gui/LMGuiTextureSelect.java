@@ -2,6 +2,9 @@ package firis.lmlib.client.gui;
 
 import java.io.IOException;
 
+import firis.lmlib.LMLibrary;
+import firis.lmlib.client.convert.ConvertUtils;
+import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.EXTRescaleNormal;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
@@ -177,6 +180,11 @@ public class LMGuiTextureSelect extends GuiScreen {
 	protected void keyTyped(char typedChar, int keyCode) throws IOException {
 		if (keyCode == 1) {
 			this.mc.displayGuiScreen(this.owner);
+		}
+		if (keyCode == Keyboard.KEY_O) {
+			LMLibrary.logger.info("Convert the model into Bedrock Edition model...");
+			ConvertUtils.transModelToBedrock();
+			LMLibrary.logger.info("Converted the model into Bedrock Edition model");
 		}
 	}
 	

@@ -5,6 +5,10 @@ import net.minecraft.client.model.PositionTextureVertex;
 import net.minecraft.client.model.TexturedQuad;
 
 public class ModelPlate extends ModelBoxBase {
+	public boolean lotherplane;
+	public int width;
+	public int height;
+	public int lPlane;
 
 	// 互換用パラメーター
 	@Deprecated
@@ -52,9 +56,14 @@ public class ModelPlate extends ModelBoxBase {
 		float lx;
 		float ly;
 		float lz;
-		boolean lotherplane = (pPlane & 0x04) > 0;
-		int lPlane = pPlane & 0x03;
-		
+		lotherplane = (pPlane & 0x04) > 0;
+		lPlane = pPlane & 0x03;
+		this.texU = pTextureX;
+		this.texV = pTextureY;
+		this.width = pWidth;
+		this.height = pHeight;
+		this.inflate = pZoom;
+
 		// i1 は平面の生成位置
 		switch (lPlane) {
 		case planeXY:
@@ -119,7 +128,7 @@ public class ModelPlate extends ModelBoxBase {
 			}
 			break;
 		}
-		
+
 		quadList = new TexturedQuad[1];
 		// 面の法面を反転する
 		if (modelrenderer.mirror) {
@@ -140,7 +149,7 @@ public class ModelPlate extends ModelBoxBase {
 				pX = f7;
 			}
 		}
-		
+
 		switch (pPlane) {
 		case planeXYFront:
 		case planeZYRight:
@@ -195,7 +204,7 @@ public class ModelPlate extends ModelBoxBase {
 			};
 			break;
 		}
-		
+
 		if ((pPlane & 0x0010) > 0) {
 			quadList[0] = new TexturedQuad(
 					new PositionTextureVertex[] {

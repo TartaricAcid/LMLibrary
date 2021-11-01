@@ -30,6 +30,9 @@ public class ModelBox extends ModelBoxBase {
 		posZ2 = pZ + pD;
 		vertexPositions = new PositionTextureVertex[8];
 		quadList = new TexturedQuad[6];
+		this.inflate = pSize;
+		this.texU = pTexX;
+		this.texV = pTexY;
 		float lx = pX + pW;
 		float ly = pY + pH;
 		float lz = pZ + pD;
@@ -62,13 +65,19 @@ public class ModelBox extends ModelBoxBase {
 		vertexPositions[5] = lwyd;
 		vertexPositions[6] = lwhd;
 		vertexPositions[7] = lxhd;
+		// west
 		quadList[0] = new TexturedQuad(new PositionTextureVertex[] {lwyd, lwyz, lwhz, lwhd}, pTexX + pD + pW, pTexY + pD, pTexX + pD + pW + pD, pTexY + pD + pH, pMRenderer.textureWidth, pMRenderer.textureHeight);
+		// east
 		quadList[1] = new TexturedQuad(new PositionTextureVertex[] {lxyz, lxyd, lxhd, lxhz}, pTexX, pTexY + pD, pTexX + pD, pTexY + pD + pH, pMRenderer.textureWidth, pMRenderer.textureHeight);
+		// up
 		quadList[2] = new TexturedQuad(new PositionTextureVertex[] {lwyd, lxyd, lxyz, lwyz}, pTexX + pD, pTexY, pTexX + pD + pW, pTexY + pD, pMRenderer.textureWidth, pMRenderer.textureHeight);
+		// down
 		quadList[3] = new TexturedQuad(new PositionTextureVertex[] {lwhz, lxhz, lxhd, lwhd}, pTexX + pD + pW, pTexY + pD, pTexX + pD + pW + pW, pTexY, pMRenderer.textureWidth, pMRenderer.textureHeight);
+		// north
 		quadList[4] = new TexturedQuad(new PositionTextureVertex[] {lwyz, lxyz, lxhz, lwhz}, pTexX + pD, pTexY + pD, pTexX + pD + pW, pTexY + pD + pH, pMRenderer.textureWidth, pMRenderer.textureHeight);
+		// south
 		quadList[5] = new TexturedQuad(new PositionTextureVertex[] {lxyd, lwyd, lwhd, lxhd}, pTexX + pD + pW + pD, pTexY + pD, pTexX + pD + pW + pD + pW, pTexY + pD + pH, pMRenderer.textureWidth, pMRenderer.textureHeight);
-		
+
 		if (pMRenderer.mirror) {
 			for (int li = 0; li < this.quadList.length; ++li) {
 				this.quadList[li].flipFace();

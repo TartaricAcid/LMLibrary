@@ -6,7 +6,9 @@ import net.minecraft.client.model.TexturedQuad;
 import net.minecraft.client.renderer.Tessellator;
 
 public abstract class ModelBoxBase {
-
+	public float inflate = 0;
+	public int texU;
+	public int texV;
 	protected PositionTextureVertex[] vertexPositions;
 	protected TexturedQuad[] quadList;
 	public float posX1;

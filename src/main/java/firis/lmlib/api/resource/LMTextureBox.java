@@ -38,17 +38,17 @@ public class LMTextureBox {
 	/**
 	 * マルチモデルパック
 	 */
-	protected MultiModelPack multiModelPack;
+	public MultiModelPack multiModelPack;
 	
 	/**
 	 * 通常メイドさんテクスチャ
 	 */
-	protected Map<EnumColor, ResourceLocation> textureLittleMaid = new EnumMap<>(EnumColor.class);
+	public Map<EnumColor, ResourceLocation> textureLittleMaid = new EnumMap<>(EnumColor.class);
 	
 	/**
 	 * 野生メイドさんテクスチャ
 	 */
-	protected Map<EnumColor, ResourceLocation> textureWildLittleMaid = new EnumMap<>(EnumColor.class);
+	public Map<EnumColor, ResourceLocation> textureWildLittleMaid = new EnumMap<>(EnumColor.class);
 	
 	/**
 	 * 通常メイドさんのデフォルト発光テクスチャ
@@ -79,13 +79,13 @@ public class LMTextureBox {
 	 * メイドさんのインナーアーマーテクスチャ
 	 * 0-9
 	 */
-	protected Map<Integer, ResourceLocation> textureInnerArmor = new HashMap<>();
+	public Map<Integer, ResourceLocation> textureInnerArmor = new HashMap<>();
 
 	/**
 	 * メイドさんのアウターアーマーテクスチャ
 	 * 0-9
 	 */
-	protected Map<Integer, ResourceLocation> textureOuterArmor = new HashMap<>();
+	public Map<Integer, ResourceLocation> textureOuterArmor = new HashMap<>();
 	
 	/**
 	 * メイドさんの発光インナーアーマーテクスチャ
@@ -188,7 +188,7 @@ public class LMTextureBox {
 	 * @param path
 	 * @return
 	 */
-	private static ResourceLocation convertResourceLocationPath(String path) {
+	public static ResourceLocation convertResourceLocationPath(String path) {
 		
 		if ("".equals(path) || path == null) return null;
 		
